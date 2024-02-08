@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+double calculateRingArea(double outerRadius, double innerRadius) {
+    return M_PI * (outerRadius * outerRadius - innerRadius * innerRadius);
+}
+int main() {
+    double innerRadius, outerRadius;
+    cout << "Введите внутренний и внешний радиусы кольца: ";
+    cin >> innerRadius >> outerRadius;
+    if (innerRadius < 0 || outerRadius < 0) {
+        cout << "Ошибка: радиус не может быть отрицательным." << endl;
+        return 1;
+    }
+    cout << "Площадь кольца: " << calculateRingArea(outerRadius, innerRadius) << endl;
+    return 0;
+}
